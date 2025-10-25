@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Olugboye Feranmi's Profile</title>
+  <link rel="stylesheet" href="style.css"/>
+  <meta name="description" content="Personal website of Olugboye Ayomide Feranmi, a nurse and tech enthusiast. Passionate about healthcare, learning, and entrepreneurship.">
+</head>
+<body>
+  <div class="background"></div>
+<header>
+    <nav class="navbar">
+  <div class="nav-container">
+   <div class="logo"></div>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="Achievements.html" class="active">Achievements</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  </header>
+  <section id="home" class="content">
+    <div class="text-area">
+      <h1>Meet Olugboye Feranmi</h1>
+      <p>My name is <em>Olugboye Ayomide Feranmi</em>, pka <strong>Tomel</strong>. I’m a Registered Nurse with interest in the intersection of healthcare, education, and technology.</p>
+      <p>I graduated from <strong>Olabisi Onabanjo University (BNsc)</strong>, and I was fully involved in student leadership and projects that support learning and personal growth. I have interest in working on ideas that bring people together and create impact, no matter how small.</p>
+      <p>Right now, I’m focused on building a career in nursing, researching digitao tools for healthcare, and helping other students find their path.</p>
+      <p>I enjoy reading, writing, and planning projects. This website is a simple space to share my journey and what I’m learning along the way.</p>
+    </div>
+    <div class="image-area">
+      <img src="Tomel.jpg" alt="Olugboye Feranmi"/>
+    </div>
+  </section>
+
+  <div id="about">
+    <section>
+      <h2>About Me</h2>
+      <p>Hello! My name is Tomel. I am a nurse and a tech enthusiast. I enjoy learning, helping others, and working on ideas that can make a difference.</p>
+      <h3>My Interests</h3>
+      <ul>
+        <li>Nursing and healthcare</li>
+        <li>Business and entrepreneurship</li>
+        <li>Technology and personal projects</li>
+      </ul>
+    </section>
+  </div>
+
+  <div id="contact">
+    <section>
+      <h3>Contact</h3>
+      <address>
+        <p><a href="tel:+2348068060608">+234 (80) 6806 0608</a></p>
+        <p>Email: <a href="mailto:olugboyeayomideferanmi@gmail.com">olugboyeayomideferanmi@gmail.com</a></p>
+      </address>
+
+      <form action="mailto:olugboyeayomideferanmi@gmail.com" method="post" enctype="text/plain">
+        <label for="email">Your Email:</label>
+        <input required type="email" id="email" name="email"/>
+
+        <label for="sex">Sex:</label>
+        <select id="sex" name="sex" required>
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <button type="reset">Reset</button>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </div>
+  <script>
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('show');
+}
+</script>
+
+</body>
+</html>

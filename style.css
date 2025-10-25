@@ -1,0 +1,265 @@
+/* General layout */
+body {
+  font-family: "Georgia", serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  background: rgba(255, 255, 255, 0.8);
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Blurred background image */
+.background {
+  background: url("Tomel.jpg") no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(8px);
+  opacity: 0.4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Header navigation */
+header {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 100px 0;
+  position: sticky;
+  top: 0;
+}
+/* === Responsive Navigation Bar === */
+
+.navbar {
+  background-color: #0d0e0f;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(25, 21, 21, 0.2);
+}
+
+.nav-container {
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  padding: 10px 20px;
+  max-width: 100px;
+  margin: auto;
+}
+
+.logo {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  text-decoration: underline;
+}
+
+/* Hamburger icon */
+.menu-icon {
+  font-size: 26px;
+  color: rgb(202, 192, 192);
+  cursor: pointer;
+  display: none;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #161b1f;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: left;
+    padding: 10px 0;
+  }
+}
+
+/* Push content down to avoid overlap */
+body {
+  padding-top: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: left;
+  gap: 20px;
+}
+
+nav a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+.btn {
+  background-color: #f5f7fb;
+  color: rgb(7, 6, 6);
+}
+
+.btn:hover {
+  background-color: #083b8a;
+}
+
+/* Home section */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 20px;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.text-area {
+  flex: 1.2;
+}
+
+.text-area h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #0f1013;
+}
+
+.text-area p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* Profile photo */
+.image-area {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+}
+
+.image-area img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #2a313c;
+}
+
+/* About and contact sections */
+#about, #contact {
+  max-width: 900px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+
+#about ul {
+  padding-left: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input, form select {
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+form button {
+  width: 100px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0b5ed7;
+  color: white;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #083b8a;
+}
+/* === Achievement Images === */
+
+.achievement {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: white;
+  border-left: 4px solid #004080;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-radius: 6px;
+}
+
+.achievement img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.achievement div {
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .achievement {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .achievement img {
+    width: 100%;
+    height: auto;
+  }
+}
+
