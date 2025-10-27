@@ -21,8 +21,6 @@ body {
   margin: 0 auto;
   padding: 0 40px;
 }
-
-/* Header & Navigation */
 .header {
   background: #ffffff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -507,3 +505,4 @@ body {
     padding: 30px 20px;
   }
 }
+
