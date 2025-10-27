@@ -1,4 +1,4 @@
-* ==================== RESET & BASE STYLES ==================== */
+/* ==================== RESET & BASE STYLES ==================== */
 * {
   margin: 0;
   padding: 0;
@@ -13,16 +13,32 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #333;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-attachment: fixed;
-  min-height: 100vh;
+  background: #ffffff;
   overflow-x: hidden;
+}
+
+/* Background with blurred image */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('Tomel.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(20px) brightness(1.2);
+  opacity: 0.15;
+  z-index: -1;
 }
 
 /* ==================== HEADER & NAVIGATION ==================== */
 header {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -42,9 +58,12 @@ header {
 }
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #667eea;
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   letter-spacing: 2px;
 }
 
@@ -78,10 +97,11 @@ header {
 .nav-links li a {
   text-decoration: none;
   color: #333;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  font-weight: 600;
+  transition: all 0.3s ease;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 0.95rem;
 }
 
 .nav-links li a:hover,
@@ -94,222 +114,408 @@ header {
 main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
 }
 
-/* ==================== HOME SECTION ==================== */
-.content {
+/* ==================== HERO SECTION ==================== */
+.hero {
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.hero-content {
   display: flex;
-  gap: 3rem;
   align-items: center;
-  background: white;
-  padding: 3rem;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.text-area {
+.profile-image {
+  flex: 0 0 280px;
+}
+
+.profile-image img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 8px solid #fff;
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.profile-image img:hover {
+  transform: scale(1.05);
+}
+
+.hero-text {
   flex: 1;
 }
 
-.text-area h1 {
-  font-size: 2.5rem;
-  color: #667eea;
+.hero-text h1 {
+  font-size: 3rem;
+  color: #333;
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
-.text-area p {
+.hero-text .highlight {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-text .subtitle {
+  font-size: 1.3rem;
+  color: #667eea;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text .intro {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.btn-secondary:hover {
+  background: #667eea;
+  color: white;
+}
+
+/* ==================== SECTIONS ==================== */
+.section {
+  padding: 5rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  margin: 2rem 0;
+}
+
+.section-dark {
+  background: rgba(248, 249, 250, 0.95);
+}
+
+.section-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #333;
   margin-bottom: 1rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+.section-description {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==================== ABOUT SECTION ==================== */
+.about-content {
+  display: grid;
+  gap: 3rem;
+}
+
+.about-text p {
+  margin-bottom: 1.2rem;
   font-size: 1.1rem;
   color: #555;
+  line-height: 1.8;
 }
 
-.text-area em {
+.about-text em {
   font-style: italic;
   color: #764ba2;
+  font-weight: 500;
 }
 
-.text-area strong {
+.about-text strong {
   font-weight: 700;
   color: #667eea;
 }
 
-.image-area {
-  flex: 0 0 300px;
+.interests {
+  margin-top: 2rem;
 }
 
-.image-area img {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.image-area img:hover {
-  transform: scale(1.05);
-}
-
-/* ==================== SECTIONS ==================== */
-section {
-  background: white;
-  padding: 3rem;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+.interests h3 {
+  font-size: 1.8rem;
+  color: #333;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
-.section-content {
-  max-width: 800px;
-  margin: 0 auto;
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
 }
 
-section h2 {
-  font-size: 2rem;
-  color: #667eea;
+.interest-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.interest-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+}
+
+.interest-icon {
+  font-size: 3rem;
   margin-bottom: 1rem;
-  border-bottom: 3px solid #667eea;
-  padding-bottom: 0.5rem;
 }
 
-section h3 {
-  font-size: 1.5rem;
-  color: #764ba2;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+.interest-card h4 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.8rem;
 }
 
-section p {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  color: #555;
-}
-
-section ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-section ul li {
-  padding: 0.5rem 0;
-  padding-left: 1.5rem;
-  position: relative;
-  color: #555;
-}
-
-section ul li::before {
-  content: "▸";
-  position: absolute;
-  left: 0;
-  color: #667eea;
-  font-weight: bold;
+.interest-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
 }
 
 /* ==================== CONTACT SECTION ==================== */
-address {
-  font-style: normal;
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.contact-info h3,
+.contact-form-wrapper h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
   margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
-address p {
-  margin-bottom: 0.5rem;
+.contact-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.15);
 }
 
-address a {
+.contact-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.contact-details h4 {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-details a {
   color: #667eea;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1.05rem;
 }
 
-address a:hover {
+.contact-details a:hover {
   text-decoration: underline;
 }
 
+.contact-details p {
+  color: #333;
+  font-size: 1.05rem;
+}
+
 /* ==================== FORM STYLES ==================== */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  max-width: 500px;
+.contact-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
-label {
+.form-group label {
+  display: block;
   font-weight: 600;
   color: #333;
+  margin-bottom: 0.5rem;
   font-size: 0.95rem;
 }
 
-input,
-select {
-  padding: 0.75rem;
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.9rem;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
   font-family: inherit;
+  background: #fafafa;
 }
 
-input:focus,
-select:focus {
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
   outline: none;
   border-color: #667eea;
+  background: white;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
 .form-buttons {
   display: flex;
   gap: 1rem;
+  margin-top: 2rem;
 }
 
-button {
+.btn-reset {
+  flex: 0 0 auto;
+  background: #f5f5f5;
+  color: #666;
+  padding: 0.9rem 1.5rem;
+}
+
+.btn-reset:hover {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.btn-submit {
   flex: 1;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button[type="submit"] {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
+  padding: 0.9rem 2rem;
 }
 
-button[type="submit"]:hover {
-  opacity: 0.9;
+.btn-submit:hover {
   transform: translateY(-2px);
-}
-
-button[type="reset"] {
-  background: #f44336;
-  color: white;
-}
-
-button[type="reset"]:hover {
-  background: #d32f2f;
-  transform: translateY(-2px);
-}
-
-button:active {
-  transform: translateY(0);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
 }
 
 /* ==================== FOOTER ==================== */
 footer {
-  background: rgba(255, 255, 255, 0.95);
-  text-align: center;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
   padding: 2rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-content p {
   color: #666;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #764ba2;
+  text-decoration: underline;
 }
 
 /* ==================== RESPONSIVE DESIGN ==================== */
@@ -325,7 +531,8 @@ footer {
     top: 100%;
     left: 0;
     width: 100%;
-    background: white;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     gap: 0;
@@ -335,7 +542,6 @@ footer {
     display: flex;
   }
 
-  /* Hamburger animation */
   .menu-toggle:checked ~ .menu-icon span:nth-child(1) {
     transform: rotate(45deg) translate(7px, 7px);
   }
@@ -362,56 +568,71 @@ footer {
     border-bottom: none;
   }
 
-  .menu-icon {
-    display: flex;
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
   }
 
-  .content {
-    flex-direction: column-reverse;
-    padding: 2rem;
-  }
-
-  .image-area {
+  .profile-image {
     flex: 0 0 auto;
-    width: 100%;
-    max-width: 300px;
   }
 
-  .text-area h1 {
+  .profile-image img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero-text h1 {
     font-size: 2rem;
   }
 
-  section {
-    padding: 2rem;
+  .hero-text .subtitle {
+    font-size: 1.1rem;
   }
 
-  section h2 {
-    font-size: 1.5rem;
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .interest-grid {
+    grid-template-columns: 1fr;
   }
 
   .form-buttons {
     flex-direction: column;
   }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
-  main {
-    padding: 1rem;
+  .hero {
+    padding: 3rem 1rem;
   }
 
-  .content {
-    padding: 1.5rem;
+  .section {
+    padding: 3rem 1rem;
   }
 
-  .text-area h1 {
+  .hero-text h1 {
     font-size: 1.75rem;
   }
 
-  .text-area p {
-    font-size: 1rem;
+  .section-title {
+    font-size: 2rem;
   }
 
-  section {
-    padding: 1.5rem;
+  .profile-image img {
+    width: 180px;
+    height: 180px;
   }
 }
