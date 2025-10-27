@@ -1,117 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Olugboye Feranmi's Profile</title>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S7TZMKV05H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-S7TZMKV05H', {
-    'cookie_domain': '.tomel.name.ng'
-  });
-</script>
-  <link rel="stylesheet" href="style.css"/>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7TZMKV05H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S7TZMKV05H', {
+      'cookie_domain': '.tomel.name.ng'
+    });
+  </script>
+  
+  <!-- SEO Meta Tags -->
   <meta name="description" content="Personal website of Olugboye Ayomide Feranmi, a nurse and tech enthusiast. Passionate about healthcare, learning, and entrepreneurship.">
-<meta name="author" content="Tomel">
-
-<!-- Social preview -->
-<meta property="og:title" content="Tomel | Official Site">
-<meta property="og:description" content="Official website of Tomel — Nurse, Student, and Business Enthusiast.">
-<meta property="og:image" content="https://tomel.name.ng/profile.jpg">
-<meta property="og:url" content="https://tomel.name.ng">
-<meta property="og:type" content="website">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Olugboye Ayomide Feranmi (Tomel)",
-  "url": "https://tomel.name.ng",
-  "image": "https://tomel.name.ng/profile.jpg",
-  "jobTitle": "Registered Nurse | Tech| Business Enthusiast",
-  "sameAs": [
-    "https://www.linkedin.com/in/oluwaferanmi-olugboye-350500220/",
-    "https://facebook.com/feranmiolugboye.52"
-  ]
-}
-</script>
+  <meta name="author" content="Tomel">
+  
+  <!-- Social Media Meta Tags -->
+  <meta property="og:title" content="Tomel | Official Site">
+  <meta property="og:description" content="Official website of Tomel — Nurse, Student, and Business Enthusiast.">
+  <meta property="og:image" content="https://tomel.name.ng/profile.jpg">
+  <meta property="og:url" content="https://tomel.name.ng">
+  <meta property="og:type" content="website">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Olugboye Ayomide Feranmi (Tomel)",
+    "url": "https://tomel.name.ng",
+    "image": "https://tomel.name.ng/profile.jpg",
+    "jobTitle": "Registered Nurse | Tech | Business Enthusiast",
+    "sameAs": [
+      "https://www.linkedin.com/in/oluwaferanmi-olugboye-350500220/",
+      "https://facebook.com/feranmiolugboye.52"
+    ]
+  }
+  </script>
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="background"></div>
-<header>
+  
+  <!-- Header Navigation -->
+  <header>
     <nav class="navbar">
-  <div class="nav-container">
-   <div class="logo"></div>
-    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="Achievements.html" class="active">Achievements</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
+      <div class="nav-container">
+        <div class="logo">TOMEL</div>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="Achievements.html" class="active">Achievements</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
-  <section id="home" class="content">
-    <div class="text-area">
-      <h1>Meet Olugboye Feranmi</h1>
-      <p>My name is <em>Olugboye Ayomide Feranmi</em>, pka <strong>Tomel</strong>. I’m a Registered Nurse with interest in the intersection of healthcare, education, and technology.</p>
-      <p>I graduated from <strong>Olabisi Onabanjo University (BNsc)</strong>, and I was fully involved in student leadership and projects that support learning and personal growth. I have interest in working on ideas that bring people together and create impact, no matter how small.</p>
-      <p>Right now, I’m focused on building a career in nursing, researching digitao tools for healthcare, and helping other students find their path.</p>
-      <p>I enjoy reading, writing, and planning projects. This website is a simple space to share my journey and what I’m learning along the way.</p>
-    </div>
-    <div class="image-area">
-      <img src="Tomel.jpg" alt="Olugboye Feranmi"/>
-    </div>
-  </section>
-
-  <div id="about">
-    <section>
-      <h2>About Me</h2>
-      <p>Hello! My name is Tomel. I am a nurse and a tech enthusiast. I enjoy learning, helping others, and working on ideas that can make a difference.</p>
-      <h3>My Interests</h3>
-      <ul>
-        <li>Nursing and healthcare</li>
-        <li>Business and entrepreneurship</li>
-        <li>Technology and personal projects</li>
-      </ul>
+  
+  <!-- Main Content Section -->
+  <main>
+    <section id="home" class="content">
+      <div class="text-area">
+        <h1>Meet Olugboye Feranmi</h1>
+        <p>
+          My name is <em>Olugboye Ayomide Feranmi</em>, pka <strong>Tomel</strong>. 
+          I'm a Registered Nurse with interest in the intersection of healthcare, education, and technology.
+        </p>
+        <p>
+          I graduated from <strong>Olabisi Onabanjo University (BNSc)</strong>, and I was fully involved 
+          in student leadership and projects that support learning and personal growth. I have interest in 
+          working on ideas that bring people together and create impact, no matter how small.
+        </p>
+        <p>
+          Right now, I'm focused on building a career in nursing, researching digital tools for healthcare, 
+          and helping other students find their path.
+        </p>
+        <p>
+          I enjoy reading, writing, and planning projects. This website is a simple space to share my 
+          journey and what I'm learning along the way.
+        </p>
+      </div>
+      <div class="image-area">
+        <img src="Tomel.jpg" alt="Olugboye Feranmi - Registered Nurse and Tech Enthusiast">
+      </div>
     </section>
-  </div>
 
-  <div id="contact">
-    <section>
-      <h3>Contact</h3>
-      <address>
-        <p><a href="tel:+2348068060608">+234 (80) 6806 0608</a></p>
-        <p>Email: <a href="mailto:olugboyeayomideferanmi@gmail.com">olugboyeayomideferanmi@gmail.com</a></p>
-      </address>
-
-      <form action="mailto:olugboyeayomideferanmi@gmail.com" method="post" enctype="text/plain">
-        <label for="email">Your Email:</label>
-        <input required type="email" id="email" name="email"/>
-
-        <label for="sex">Sex:</label>
-        <select id="sex" name="sex" required>
-          <option value="">Select</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Other">Other</option>
-        </select>
-
-        <button type="reset">Reset</button>
-        <button type="submit">Send</button>
-      </form>
+    <!-- About Section -->
+    <section id="about">
+      <div class="section-content">
+        <h2>About Me</h2>
+        <p>
+          Hello! My name is Tomel. I am a nurse and a tech enthusiast. I enjoy learning, 
+          helping others, and working on ideas that can make a difference.
+        </p>
+        <h3>My Interests</h3>
+        <ul>
+          <li>Nursing and healthcare</li>
+          <li>Business and entrepreneurship</li>
+          <li>Technology and personal projects</li>
+        </ul>
+      </div>
     </section>
-  </div>
-  <script>
-function toggleMenu() {
-  document.getElementById('navLinks').classList.toggle('show');
-}
-</script>
 
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="section-content">
+        <h2>Contact</h2>
+        <address>
+          <p>Phone: <a href="tel:+2348068060608">+234 (80) 6806 0608</a></p>
+          <p>Email: <a href="mailto:olugboyeayomideferanmi@gmail.com">olugboyeayomideferanmi@gmail.com</a></p>
+        </address>
+
+        <form action="mailto:olugboyeayomideferanmi@gmail.com" method="post" enctype="text/plain">
+          <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex" required>
+              <option value="">Select</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-buttons">
+            <button type="reset">Reset</button>
+            <button type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Olugboye Feranmi (Tomel). All rights reserved.</p>
+  </footer>
 </body>
 </html>
-
-
