@@ -3,19 +3,34 @@
   .hero-content {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+    align-items: center;
   }
 
   .hero-image img {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
   }
 
   .hero-title {
-    font-size: 36px;
+    font-size: 32px;
   }
 
-  .hero-greeting,
-  .hero-description {/* CSS Reset & Base */
+  .hero-greeting {
+    font-size: 14px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .interests-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}/* CSS Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -478,13 +493,26 @@ body {
     padding: 120px 0 80px;
   }
 
-  .hero-title {
-    font-size: 36px;
+  .hero-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
 
   .hero-image img {
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .hero-greeting {
+    font-size: 13px;
+  }
+
+  .hero-description {
+    font-size: 14px;
   }
 
   .section-title {
@@ -509,13 +537,26 @@ body {
 }
 
 @media (max-width: 480px) {
-  .hero-title {
-    font-size: 28px;
+  .hero-content {
+    grid-template-columns: 120px 1fr;
+    gap: 15px;
   }
 
-  .hero-greeting,
+  .hero-image img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero-title {
+    font-size: 20px;
+  }
+
+  .hero-greeting {
+    font-size: 12px;
+  }
+
   .hero-description {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .section-title {
