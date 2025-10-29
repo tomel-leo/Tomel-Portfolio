@@ -50,12 +50,20 @@ window.addEventListener('scroll', function() {
       link.classList.add('active');
     }
   });
+
+  // Header shadow on scroll
+  const header = document.querySelector('.header');
+  if (window.scrollY > 50) {
+    header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+  } else {
+    header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+  }
 });
 
-// Fade-in Animation on Scroll (like Gentry's site)
+// Fade-in Animation on Scroll (Gentry Style)
 const observerOptions = {
-  threshold: 0.15,
-  rootMargin: '0px 0px -100px 0px'
+  threshold: 0.1,
+  rootMargin: '0px 0px -80px 0px'
 };
 
 const fadeInObserver = new IntersectionObserver(function(entries) {
@@ -66,37 +74,57 @@ const fadeInObserver = new IntersectionObserver(function(entries) {
   });
 }, observerOptions);
 
-// Apply fade-in to elements
+// Initialize animations when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-  // Fade in interest cards
-  const cards = document.querySelectorAll('.interest-card');
-  cards.forEach((card, index) => {
+  // Fade in interest cards with stagger
+  const interestCards = document.querySelectorAll('.interest-card');
+  interestCards.forEach((card, index) => {
     card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+    card.style.transform = 'translateY(40px)';
+    card.style.transition = `opacity 0.6s ease ${index * 0.15}s, transform 0.6s ease ${index * 0.15}s`;
     card.classList.add('fade-in-element');
     fadeInObserver.observe(card);
   });
+
+  // Fade in project cards with stagger
+  const projectCards = document.querySelectorAll('.project-card');
+  projectCards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(40px)';
+    card.style.transition = `opacity 0.6s ease ${index * 0.15}s, transform 0.6s ease ${index * 0.15}s`;
+    card.classList.add('fade-in-element');
+    fadeInObserver.observe(card);
+  });
+
+  // Fade in about content
+  const aboutContent = document.querySelector('.about-content');
+  if (aboutContent) {
+    aboutContent.style.opacity = '0';
+    aboutContent.style.transform = 'translateY(40px)';
+    aboutContent.style.transition = 'opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s';
+    aboutContent.classList.add('fade-in-element');
+    fadeInObserver.observe(aboutContent);
+  }
 
   // Fade in contact form
   const contactForm = document.querySelector('.contact-form-wrapper');
   if (contactForm) {
     contactForm.style.opacity = '0';
-    contactForm.style.transform = 'translateY(30px)';
-    contactForm.style.transition = 'opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s';
+    contactForm.style.transform = 'translateY(40px)';
+    contactForm.style.transition = 'opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s';
     contactForm.classList.add('fade-in-element');
     fadeInObserver.observe(contactForm);
   }
 
-  // Fade in contact info
-  const contactInfo = document.querySelector('.contact-info');
-  if (contactInfo) {
-    contactInfo.style.opacity = '0';
-    contactInfo.style.transform = 'translateY(30px)';
-    contactInfo.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    contactInfo.classList.add('fade-in-element');
-    fadeInObserver.observe(contactInfo);
-  }
+  // Fade in contact info cards
+  const infoCards = document.querySelectorAll('.info-card');
+  infoCards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(40px)';
+    card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+    card.classList.add('fade-in-element');
+    fadeInObserver.observe(card);
+  });
 });
 
 // Add visible class when element is in view
@@ -109,7 +137,34 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Form Validation
+// Testimonials Slider - Pause on Hover (Gentry Style)
+const testimonialTrack = document.querySelector('.testimonial-track');
+if (testimonialTrack) {
+  // Clone testimonials for infinite loop
+  const testimonials = Array.from(testimonialTrack.children);
+  testimonials.forEach(testimonial => {
+    const clone = testimonial.cloneNode(true);
+    testimonialTrack.appendChild(clone);
+  });
+
+  // Pause/Resume on hover and tap
+  testimonialTrack.addEventListener('mouseenter', function() {
+    this.style.animationPlayState = 'paused';
+  });
+
+  testimonialTrack.addEventListener('mouseleave', function() {
+    this.style.animationPlayState = 'running';
+  });
+
+  // Touch support for mobile
+  let touchPaused = false;
+  testimonialTrack.addEventListener('touchstart', function() {
+    touchPaused = !touchPaused;
+    this.style.animationPlayState = touchPaused ? 'paused' : 'running';
+  });
+}
+
+// Form Validation with Better UX
 const form = document.querySelector('.contact-form');
 if (form) {
   form.addEventListener('submit', function(e) {
@@ -121,7 +176,7 @@ if (form) {
     // Validate all fields are filled
     if (!name.value.trim() || !email.value.trim() || !subject.value.trim() || !message.value.trim()) {
       e.preventDefault();
-      alert('Please fill in all fields.');
+      alert('Please fill in all fields before submitting.');
       return false;
     }
 
@@ -132,24 +187,32 @@ if (form) {
       alert('Please enter a valid email address.');
       return false;
     }
+
+    // Show loading state
+    const submitBtn = this.querySelector('.submit-btn');
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
   });
 
-  // Input focus effects
+  // Input focus effects with smooth transitions
   const inputs = form.querySelectorAll('input, textarea');
   inputs.forEach(input => {
     input.addEventListener('focus', function() {
       this.style.borderColor = '#2b6cb0';
+      this.style.boxShadow = '0 0 0 3px rgba(43, 108, 176, 0.1)';
     });
     
     input.addEventListener('blur', function() {
-      if (!this.value) {
-        this.style.borderColor = '#e2e8f0';
-      }
+      this.style.borderColor = '#e2e8f0';
+      this.style.boxShadow = 'none';
     });
   });
 }
 
-// Scroll to top on page load
+// Smooth Page Load
 window.addEventListener('load', function() {
-  window.scrollTo(0, 0);
+  document.body.style.opacity = '1';
 });
+
+// Scroll to top on page load
+window.scrollTo(0, 0);
