@@ -1,36 +1,4 @@
-
-@media (max-width: 992px) {
-  .hero-content {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: center;
-  }
-
-  .hero-image img {
-    width: 200px;
-    height: 200px;
-  }
-
-  .hero-title {
-    font-size: 32px;
-  }
-
-  .hero-greeting {
-    font-size: 14px;
-  }
-
-  .hero-description {
-    font-size: 15px;
-  }
-
-  .interests-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-  }
-}/* CSS Reset & Base */
+/* CSS Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -403,25 +371,26 @@ body {
 /* Mobile Responsive */
 @media (max-width: 992px) {
   .hero-content {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-text {
-    order: 2;
-  }
-
-  .hero-image {
-    order: 1;
-    margin-bottom: 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
   }
 
   .hero-image img {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
   }
 
   .hero-title {
-    font-size: 42px;
+    font-size: 32px;
+  }
+
+  .hero-greeting {
+    font-size: 14px;
+  }
+
+  .hero-description {
+    font-size: 15px;
   }
 
   .interests-grid {
@@ -567,4 +536,3 @@ body {
     padding: 30px 20px;
   }
 }
-
