@@ -791,3 +791,53 @@ body {
     min-width: 280px;
   }
 }
+/* Dark Mode Styles */
+body.dark-mode {
+  background: #1a202c;
+  color: #e2e8f0;
+}
+
+body.dark-mode .section,
+body.dark-mode .hero,
+body.dark-mode .about-section,
+body.dark-mode .projects-section,
+body.dark-mode .testimonials-section,
+body.dark-mode .contact-section,
+body.dark-mode .footer {
+  background: #2d3748;
+}
+
+body.dark-mode .card,
+body.dark-mode .project-card,
+body.dark-mode .interest-card,
+body.dark-mode .testimonial-card {
+  background: #374151;
+}
+
+/* Dark mode toggle button */
+.dark-toggle {
+  background: none;
+  border: 1px solid #888;
+  border-radius: 50%;
+  font-size: 18px;
+  padding: 6px;
+  margin-left: 10px;
+  cursor: pointer;
+  color: inherit;
+}
+
+.dark-toggle:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .dark-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
