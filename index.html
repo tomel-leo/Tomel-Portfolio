@@ -3,30 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Olugboye Feranmi - Registered Nurse</title>
-  
+  <title>Olugboye Feranmi — Registered Nurse</title>
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7TZMKV05H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-S7TZMKV05H', {
-      'cookie_domain': '.tomel.name.ng'
-    });
+    gtag('config', 'G-S7TZMKV05H', { 'cookie_domain': '.tomel.name.ng' });
   </script>
-  
-  <!-- SEO Meta Tags -->
+
+  <!-- SEO -->
   <meta name="description" content="Personal website of Olugboye Ayomide Feranmi, a Registered Nurse with interest in healthcare, education, and technology.">
   <meta name="author" content="Tomel">
-  
-  <!-- Social Media Meta Tags -->
   <meta property="og:title" content="Tomel | Registered Nurse">
-  <meta property="og:description" content="Olugboye Ayomide Feranmi - Registered Nurse passionate about healthcare innovation.">
+  <meta property="og:description" content="Olugboye Ayomide Feranmi — Registered Nurse passionate about healthcare innovation.">
   <meta property="og:image" content="https://tomel.name.ng/Tomel.jpg">
   <meta property="og:url" content="https://tomel.name.ng">
   <meta property="og:type" content="website">
-  
+
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -42,359 +38,429 @@
     ]
   }
   </script>
-  
-  <!-- Stylesheet -->
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <!-- Header Navigation -->
-  <header class="header">
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <span>T</span><span>O</span><span>M</span><span>E</span><span>L</span>
+    </div>
+  </div>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Header -->
+  <header class="header" id="header">
     <nav class="navbar">
       <div class="container">
         <div class="nav-wrapper">
           <a href="index.html" class="logo">TOMEL</a>
-          <input type="checkbox" id="menu-toggle" class="menu-toggle">
-          <label for="menu-toggle" class="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-          <ul class="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#interests">Interests</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#interests" class="nav-link">Interests</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
           </ul>
-          <button id="darkModeToggle" class="dark-toggle">🌙</button>
+
+          <div class="nav-actions">
+            <button id="darkModeToggle" class="dark-toggle" aria-label="Toggle dark mode">
+              <span class="toggle-icon">🌙</span>
+            </button>
+            <button class="hamburger" id="hamburger" aria-label="Open menu">
+              <span></span><span></span>
+            </button>
+          </div>
         </div>
       </div>
     </nav>
   </header>
-  
-  <!-- Hero Section -->
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <ul>
+      <li><a href="#home" class="mobile-link">Home</a></li>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#interests" class="mobile-link">Interests</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#testimonials" class="mobile-link">Testimonials</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+    <div class="mobile-socials">
+      <a href="https://www.linkedin.com/in/oluwaferanmi-olugboye-350500220/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://facebook.com/feranmiolugboye.52" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
   <section id="home" class="hero">
+    <div class="hero-bg-text" aria-hidden="true">NURSE</div>
     <div class="container">
       <div class="hero-content">
         <div class="hero-text">
-          <p class="hero-greeting">HI, I'M OLUGBOYE FERANMI</p>
-          <h1 class="hero-title">I'm a <span>Registered Nurse</span></h1>
-          <p class="hero-subtitle">I Help</p>
-          <ul class="hero-list">
-            <li>Healthcare Institutions</li>
-            <li>Students & Professionals</li>
-            <li>Communities</li>
-          </ul>
-          <p class="hero-description">
-            Succeed Through Excellent Healthcare Services, Education, and Technology Driven Solutions.
+          <p class="hero-eyebrow reveal-up">Hi, I'm Olugboye Feranmi</p>
+          <h1 class="hero-title reveal-up" style="--delay:0.1s">
+            Registered<br><em>Nurse &amp;</em><br>Healthcare<br>Innovator
+          </h1>
+          <p class="hero-description reveal-up" style="--delay:0.2s">
+            Bridging compassionate patient care with modern technology to build a healthier Nigeria — one solution at a time.
           </p>
+          <div class="hero-cta reveal-up" style="--delay:0.3s">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+          </div>
+          <div class="hero-stats reveal-up" style="--delay:0.4s">
+            <div class="stat">
+              <span class="stat-num" data-target="4">0</span><span>+</span>
+              <p>Major Projects</p>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-num" data-target="100">0</span><span>+</span>
+              <p>Students Mentored</p>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-num" data-target="5">0</span><span>+</span>
+              <p>Years Experience</p>
+            </div>
+          </div>
         </div>
-        <div class="hero-image">
-          <img src="Tomel.jpg" alt="Olugboye Feranmi - Registered Nurse">
+        <div class="hero-image reveal-right" style="--delay:0.2s">
+          <div class="image-frame">
+            <img src="Tomel.jpg" alt="Olugboye Feranmi — Registered Nurse">
+            <div class="image-badge">
+              <span>RN</span>
+              <p>Registered<br>Nurse</p>
+            </div>
+          </div>
+          <div class="hero-scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- ═══ ABOUT ═══ -->
   <section id="about" class="about-section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">WHO AM I?</span>
-        <h2 class="section-title">About Me</h2>
-      </div>
-      <div class="about-content">
-        <p>
-          Hi! I'm <strong>Olugboye Ayomide Feranmi</strong>, also known as <strong>Tomel</strong>. 
-          I'm a Registered Nurse with a deep passion for healthcare excellence, 
-          education, and leveraging technology to improve patient outcomes.
-        </p>
-        <p>
-          I graduated from <strong>Olabisi Onabanjo University (BNSc)</strong>, where I was actively involved 
-          in student leadership and initiatives that support learning and personal development. I enjoy reducing 
-          complex healthcare challenges to simple, effective, and patient-centered solutions.
-        </p>
-        <p>
-          When I'm not providing patient care or developing healthcare projects, you can find me mentoring nursing 
-          students, exploring digital health tools, or working on community health initiatives. I believe in creating 
-          solutions that bring people together and generate positive impact.
-        </p>
-        <p>
-          My mission is to bridge the gap between traditional nursing practice and modern technology, making 
-          healthcare more accessible, efficient, and patient-friendly.
-        </p>
+      <div class="about-layout">
+        <div class="about-left reveal-left">
+          <span class="section-label">Who Am I?</span>
+          <h2 class="section-title">About<br><em>Me</em></h2>
+          <div class="about-accent-line"></div>
+          <div class="about-links">
+            <a href="https://www.linkedin.com/in/oluwaferanmi-olugboye-350500220/" target="_blank" rel="noopener" class="about-social-link">LinkedIn ↗</a>
+            <a href="https://facebook.com/feranmiolugboye.52" target="_blank" rel="noopener" class="about-social-link">Facebook ↗</a>
+          </div>
+        </div>
+        <div class="about-right reveal-right">
+          <p>Hi! I'm <strong>Olugboye Ayomide Feranmi</strong>, also known as <strong>Tomel</strong>. I'm a Registered Nurse with a deep passion for healthcare excellence, education, and leveraging technology to improve patient outcomes.</p>
+          <p>I graduated from <strong>Olabisi Onabanjo University (BNSc)</strong>, where I was actively involved in student leadership and initiatives that support learning and personal development. I enjoy reducing complex healthcare challenges to simple, effective, and patient-centered solutions.</p>
+          <p>When I'm not providing patient care or developing healthcare projects, you can find me mentoring nursing students, exploring digital health tools, or working on community health initiatives.</p>
+          <p>My mission is to bridge the gap between traditional nursing practice and modern technology, making healthcare more accessible, efficient, and patient-friendly.</p>
+          <div class="about-tags">
+            <span>Patient Care</span>
+            <span>Health Tech</span>
+            <span>Mentorship</span>
+            <span>Community Health</span>
+            <span>Education</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Interests Section -->
+  <!-- ═══ INTERESTS ═══ -->
   <section id="interests" class="interests-section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">MY FOCUS</span>
-        <h2 class="section-title">Areas of Interest</h2>
-        <p class="section-description">
-          From patient care to technology, every area offers the opportunity to create meaningful impact 
-          and advance the nursing profession.
-        </p>
+      <div class="section-header reveal-up">
+        <span class="section-label">My Focus</span>
+        <h2 class="section-title">Areas of<br><em>Interest</em></h2>
+        <p class="section-description">From patient care to technology, every area offers the opportunity to create meaningful impact and advance the nursing profession.</p>
       </div>
       <div class="interests-grid">
-        <div class="interest-card">
+        <div class="interest-card reveal-up" style="--delay:0s">
           <div class="interest-number">01</div>
+          <div class="interest-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
           <h3>Healthcare Excellence</h3>
           <p>Committed to providing quality patient care and advancing nursing practice through continuous learning, evidence-based practice, and professional development.</p>
+          <div class="card-arrow">→</div>
         </div>
-        <div class="interest-card">
+        <div class="interest-card reveal-up" style="--delay:0.1s">
           <div class="interest-number">02</div>
+          <div class="interest-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+          </div>
           <h3>Health Technology</h3>
           <p>Exploring digital solutions, telemedicine, and innovative tools to improve healthcare delivery, enhance patient outcomes, and streamline nursing workflows.</p>
+          <div class="card-arrow">→</div>
         </div>
-        <div class="interest-card">
+        <div class="interest-card reveal-up" style="--delay:0.2s">
           <div class="interest-number">03</div>
-          <h3>Education & Mentorship</h3>
+          <div class="interest-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h3>Education &amp; Mentorship</h3>
           <p>Supporting nursing students and healthcare professionals in their learning journey, career development, and professional growth through guidance and mentorship.</p>
+          <div class="card-arrow">→</div>
         </div>
-        <div class="interest-card">
+        <div class="interest-card reveal-up" style="--delay:0.3s">
           <div class="interest-number">04</div>
+          <div class="interest-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75"/></svg>
+          </div>
           <h3>Community Health</h3>
           <p>Developing sustainable solutions to real-world healthcare challenges through community engagement, health promotion, and entrepreneurial thinking.</p>
+          <div class="card-arrow">→</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- ═══ PROJECTS ═══ -->
   <section id="projects" class="projects-section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">MY WORK</span>
-        <h2 class="section-title">Recent Projects</h2>
+      <div class="section-header reveal-up">
+        <span class="section-label">My Work</span>
+        <h2 class="section-title">Recent<br><em>Projects</em></h2>
       </div>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-content">
-            <h3>Nursing Internship Portal</h3>
-            <p>A comprehensive platform connecting nursing graduates with federal and state hospitals offering internship opportunities across Nigeria.</p>
-            <a href="#" class="project-link">View Project →</a>
+      <div class="projects-list">
+        <div class="project-item reveal-up" style="--delay:0s">
+          <div class="project-num">01</div>
+          <div class="project-tags">
+            <span>Health Tech</span>
+            <span>Platform</span>
           </div>
+          <a href="#" class="project-cta">View Project <span>↗</span></a>
         </div>
-        <div class="project-card">
-          <div class="project-content">
+        <div class="project-item reveal-up" style="--delay:0.1s">
+          <div class="project-num">02</div>
+          <div class="project-info">
             <h3>Student Leadership Program</h3>
             <p>Guiding nursing students through academic challenges, clinical rotations, and career planning to ensure successful professional development.</p>
-            <a href="#" class="project-link">Learn More →</a>
           </div>
+          <div class="project-tags">
+            <span>Education</span>
+            <span>Mentorship</span>
+          </div>
+          <a href="#" class="project-cta">Learn More <span>↗</span></a>
         </div>
-        <div class="project-card">
-          <div class="project-content">
+        <div class="project-item reveal-up" style="--delay:0.2s">
+          <div class="project-num">03</div>
+          <div class="project-info">
             <h3>Community Health Awareness</h3>
             <p>Organizing health awareness campaigns and free medical screenings in underserved communities to promote preventive healthcare.</p>
-            <a href="#" class="project-link">Learn More →</a>
           </div>
+          <div class="project-tags">
+            <span>Community</span>
+            <span>Prevention</span>
+          </div>
+          <a href="#" class="project-cta">Learn More <span>↗</span></a>
         </div>
-        <div class="project-card">
-          <div class="project-content">
+        <div class="project-item reveal-up" style="--delay:0.3s">
+          <div class="project-num">04</div>
+          <div class="project-info">
             <h3>Digital Health Tools</h3>
             <p>Developing and implementing technology solutions to improve patient record management and enhance clinical decision-making processes.</p>
-            <a href="#" class="project-link">View Project →</a>
           </div>
+          <div class="project-tags">
+            <span>Digital Health</span>
+            <span>Innovation</span>
+          </div>
+          <a href="#" class="project-cta">View Project <span>↗</span></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials Section -->
+  <!-- ═══ TESTIMONIALS ═══ -->
   <section id="testimonials" class="testimonials-section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">TESTIMONIALS</span>
-        <h2 class="section-title">What People Say</h2>
+      <div class="section-header reveal-up">
+        <span class="section-label">Testimonials</span>
+        <h2 class="section-title">What People<br><em>Say</em></h2>
         <p class="section-description">Don't take my word for it! Hear what others have to say about me.</p>
       </div>
-      
-      <div class="testimonials-slider">
-        <div class="testimonial-track">
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="testimonial-avatar">
-                <div class="avatar-placeholder">OA</div>
-              </div>
-              <div class="testimonial-author">
-                <h4>Onakoya Ademiyiwa</h4>
-                <p>Registerd Nurse</p>
-              </div>
+    </div>
+    <div class="testimonials-ticker">
+      <div class="ticker-track" id="tickerTrack">
+        <div class="testimonial-card">
+          <div class="tcard-top">
+            <div class="tcard-avatar">OA</div>
+            <div>
+              <h4>Onakoya Ademiyiwa</h4>
+              <p>Registered Nurse</p>
             </div>
-            <div class="testimonial-content">
-              <p>"Tomel is highly dedicated to helping others"</p>
-            </div>
+            <div class="tcard-stars">★★★★★</div>
           </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="testimonial-avatar">
-                <div class="avatar-placeholder">AA</div>
-              </div>
-              <div class="testimonial-author">
-                <h4>Adebayo Aminat</h4>
-                <p>Nursing Graduate</p>
-              </div>
+          <blockquote>"Tomel is highly dedicated to helping others."</blockquote>
+        </div>
+        <div class="testimonial-card">
+          <div class="tcard-top">
+            <div class="tcard-avatar">AA</div>
+            <div>
+              <h4>Adebayo Aminat</h4>
+              <p>Nursing Graduate</p>
             </div>
-            <div class="testimonial-content">
-              <p>"He truly cares about the success of every nurse."</p>
-            </div>
+            <div class="tcard-stars">★★★★★</div>
           </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="testimonial-avatar">
-                <div class="avatar-placeholder">DO</div>
-              </div>
-              <div class="testimonial-author">
-                <h4>Dr. Mark David</h4>
-                <p>Chief Nursing Officer</p>
-              </div>
+          <blockquote>"He truly cares about the success of every nurse."</blockquote>
+        </div>
+        <div class="testimonial-card">
+          <div class="tcard-top">
+            <div class="tcard-avatar">MD</div>
+            <div>
+              <h4>Dr. Mark David</h4>
+              <p>Chief Nursing Officer</p>
             </div>
-            <div class="testimonial-content">
-              <p>"He's a forward-thinking professional who understands the future of healthcare."</p>
-            </div>
+            <div class="tcard-stars">★★★★★</div>
           </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="testimonial-avatar">
-                <div class="avatar-placeholder">BO</div>
-              </div>
-              <div class="testimonial-author">
-                <h4>Blessing Okonkwo</h4>
-                <p>Health Assistant</p>
-              </div>
+          <blockquote>"A forward-thinking professional who understands the future of healthcare."</blockquote>
+        </div>
+        <div class="testimonial-card">
+          <div class="tcard-top">
+            <div class="tcard-avatar">BO</div>
+            <div>
+              <h4>Blessing Okonkwo</h4>
+              <p>Health Assistant</p>
             </div>
-            <div class="testimonial-content">
-              <p>"He is always willing to help"</p>
-            </div>
+            <div class="tcard-stars">★★★★★</div>
           </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="testimonial-avatar">
-                <div class="avatar-placeholder">CI</div>
-              </div>
-              <div class="testimonial-author">
-                <h4>Chioma Ifeoma</h4>
-                <p>Nursing Student</p>
-              </div>
+          <blockquote>"He is always willing to help."</blockquote>
+        </div>
+        <div class="testimonial-card">
+          <div class="tcard-top">
+            <div class="tcard-avatar">CI</div>
+            <div>
+              <h4>Chioma Ifeoma</h4>
+              <p>Nursing Student</p>
             </div>
-            <div class="testimonial-content">
-              <p>"Feranmi is not just a mentor but a role model"</p>
-            </div>
+            <div class="tcard-stars">★★★★★</div>
           </div>
+          <blockquote>"Feranmi is not just a mentor but a role model."</blockquote>
         </div>
       </div>
-      
-      <div class="slider-hint">Hover to pause • Automatically scrolls</div>
     </div>
+    <p class="slider-hint">Hover to pause · Auto-scrolling</p>
   </section>
-
-  <!-- Contact Section -->
   <section id="contact" class="contact-section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">GET IN TOUCH</span>
-        <h2 class="section-title">Contact Me</h2>
-        <p class="section-description">
-          Have a question or want to work together? Feel free to reach out. I'd love to hear from you!
-        </p>
-      </div>
-      <div class="contact-wrapper">
-        <div class="contact-info">
-          <div class="info-card">
-            <div class="info-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-              </svg>
-            </div>
-            <div class="info-details">
-              <h4>Phone</h4>
-              <p><a href="tel:+2348068060608">+234 806 806 0608</a></p>
+      <div class="contact-layout">
+        <div class="contact-left reveal-left">
+          <span class="section-label">Get In Touch</span>
+          <h2 class="section-title">Let's<br><em>Connect</em></h2>
+          <p class="contact-intro">Have a question or want to work together? I'd love to hear from you.</p>
+
+          <div class="contact-details">
+            <a href="tel:+2348068060608" class="contact-detail-item">
+              <div class="detail-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.13 12.5 19.79 19.79 0 0 1 1.06 4a2 2 0 0 1 1.72-2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div>
+                <span class="detail-label">Phone</span>
+                <span class="detail-value">+234 806 806 0608</span>
+              </div>
+            </a>
+            <a href="mailto:olugboyeayomideferanmi@gmail.com" class="contact-detail-item">
+              <div class="detail-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div>
+                <span class="detail-label">Email</span>
+                <span class="detail-value">olugboyeayomideferanmi@gmail.com</span>
+              </div>
+            </a>
+            <div class="contact-detail-item">
+              <div class="detail-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div>
+                <span class="detail-label">Location</span>
+                <span class="detail-value">Osun State, Nigeria</span>
+              </div>
             </div>
           </div>
 
-          <div class="info-card">
-            <div class="info-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-            </div>
-            <div class="info-details">
-              <h4>Email</h4>
-              <p><a href="mailto:olugboyeayomideferanmi@gmail.com">olugboyeayomideferanmi@gmail.com</a></p>
-            </div>
-          </div>
-
-          <div class="info-card">
-            <div class="info-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-            </div>
-            <div class="info-details">
-              <h4>Location</h4>
-              <p>Oyo State, Nigeria</p>
-            </div>
+          <div class="contact-socials">
+            <a href="https://www.linkedin.com/in/oluwaferanmi-olugboye-350500220/" target="_blank" rel="noopener" class="social-pill">LinkedIn ↗</a>
+            <a href="https://facebook.com/feranmiolugboye.52" target="_blank" rel="noopener" class="social-pill">Facebook ↗</a>
           </div>
         </div>
-        
-        <div class="contact-form-wrapper">
-          <form class="contact-form" action="mailto:olugboyeayomideferanmi@gmail.com" method="post" enctype="text/plain">
+
+        <div class="contact-right reveal-right">
+          <form class="contact-form" id="contactForm" action="mailto:olugboyeayomideferanmi@gmail.com" method="post" enctype="text/plain">
             <div class="form-row">
               <div class="form-group">
-                <input type="text" name="name" placeholder="Your Name" required>
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
               </div>
               <div class="form-group">
-                <input type="email" name="email" placeholder="Your Email" required>
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required>
               </div>
             </div>
             <div class="form-group">
-              <input type="text" name="subject" placeholder="Subject" required>
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="How can I help?" required>
             </div>
             <div class="form-group">
-              <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or question..." required></textarea>
             </div>
-            <button type="submit" class="submit-btn">Send Message</button>
+            <button type="submit" class="submit-btn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-arrow">→</span>
+            </button>
           </form>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ═══ FOOTER ═══ -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-left">
+      <div class="footer-top">
+        <div class="footer-brand">
           <p class="footer-logo">TOMEL</p>
-          <p class="footer-tagline">Registered Nurse | Healthcare Innovator</p>
+          <p class="footer-tagline">Registered Nurse · Healthcare Innovator</p>
         </div>
-        <div class="footer-links">
-          <a href="https://www.linkedin.com/in/oluwaferanmi-olugboye-350500220/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://facebook.com/feranmiolugboye.52" target="_blank" rel="noopener">Facebook</a>
+        <div class="footer-nav">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/oluwaferanmi-olugboye-350500220/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://facebook.com/feranmiolugboye.52" target="_blank" rel="noopener">Facebook ↗</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Olugboye Feranmi (Tomel). All Rights Reserved.</p>
+        <p>&copy; 202Ol6 ugboye Feranmi (Tomel). All Rights Reserved.</p>
+        <button id="scrollTop" class="scroll-top" aria-label="Back to top">↑</button>
       </div>
     </div>
   </footer>
 
-  <!-- JavaScript -->
   <script src="script.js"></script>
-
 </body>
 </html>
-
-
-
